@@ -20,11 +20,10 @@ fetch("/portfolio/partials/footer.html")
 
 // Fonction pour définir le bouton de navigation actif
 function setActiveNav() {
-    console.log(window.location.pathname.split("/")[1]);
-    const currentPage = window.location.pathname.split("/")[1] || 'index.html';
+    const currentPage = window.location.pathname.split("/")[2] || 'index.html';
     const navButtons = document.querySelectorAll(".nav-btn");    
     navButtons.forEach(button => {
-        const buttonPage = button.getAttribute("href").split("/")[1];
+        const buttonPage = button.getAttribute("href").split("/")[2];
         if (buttonPage === currentPage) {
             button.classList.add("active");
         } else {
