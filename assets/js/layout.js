@@ -1,4 +1,4 @@
-fetch("/partials/header.html")
+fetch("/portfolio/partials/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -6,7 +6,7 @@ fetch("/partials/header.html")
   })
   .catch(console.error);
 
-fetch("/partials/footer.html")
+fetch("/portfolio/partials/footer.html")
   .then(res => res.text())
   .then(data => {
     const footer = document.getElementById("footer");
