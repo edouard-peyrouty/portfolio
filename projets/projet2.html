@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Edouard Peyrouty</title>
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <script src="/assets/js/layout.js" defer></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav id="header"></nav>
+
+    <main>
+        <section>
+            <h1>Automatisation de la chaine de production CI/CD</h1>
+            <p class="search">
+                Pipeline CI/CD automatisée avec GitHub Actions et Docker, déclenché à chaque commit,
+                assurant le build, la publication automatique des images Docker sur Docker Hub et
+                un déploiement rapide grâce à un script d’exécution. Projet implémenté sur une 
+                application simple de test développée en python Flask avec une base de données mySQL.
+            </p>
+            <a href="https://github.com/edouard-peyrouty/automatisation-CI-CD" class="nav-btn btn-github" target="_blank">
+                Voir le code source
+            </a>
+        </section>
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Schéma de la pipeline</h2>
+                <p>
+                    A chaque commit du développeur, gitHub Actions déclenche la pipeline CI/CD.
+                    Cette dernière construit les images Docker de l’application et de la base de 
+                    données, les publie sur Docker Hub, puis un script d’exécution permet de 
+                    récupérer la version la plus récente de l'application et de la lancer rapidement
+                </p>
+                <div><img class="img-projet" src="/assets/images/projets/projet2/schema.png" alt="Exemples de cartes et courbes météorologiques générées par l'application"></div>
+            </section>
+        </div>
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Installation et lancement de l'application côté utilisateur</h2>
+                <p>
+                    L'installation et l'exécution de l'application ne nécessitent aucune 
+                    configuration complexe pour l'utilisateur. Il lui suffit de télécharger le 
+                    script de lancement qu'il exécute pour lancer l'application. Lors de son 
+                    exécution, le script récupère les images Docker les plus récentes depuis le 
+                    registre, garantissant que l'utilisateur exécute toujours la dernière version 
+                    stable de l'application.
+                </p>
+            </section>
+        </div>
+        <div class="grid-container">
+            <section class="color-box last">
+                <h2>Technologies et langages utilisés</h2>
+                <div class="logos">
+                    <div><img src="/assets/images/langages/python.jpg" alt="Python" title="Python"></div>
+                    <div><img src="/assets/images/langages/sql.png" alt="SQL" title="SQL"></div>
+                    <div><img src="/assets/images/langages/html.png" alt="HTML" title="HTML"></div>
+                    <div><img src="/assets/images/outils/mysql.png" alt="mySQL" title="mySQL"></div>
+                    <div><img src="/assets/images/frameworks/flask.png" alt="flask" title="flask"></div>
+                    <div><img src="/assets/images/outils/github.png" alt="GitHub" title="GitHub"></div>
+                    <div><img class="fullwidth" src="/assets/images/outils/github_actions.jpg" alt="GitHub Actions" title="GitHub Actions"></div>
+                    <div><img class="fullwidth" src="/assets/images/outils/docker.png" alt="Docker" title="Docker"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+</body>
+</html>

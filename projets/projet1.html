@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Edouard Peyrouty</title>
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <script src="/assets/js/layout.js" defer></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav id="header"></nav>
+
+    <main>
+        <section>
+            <h1>Application web de visualisation météorologique</h1>
+            <p class="search">
+                Application web dynamique développée en PHP permettant de 
+                générer des courbes et des cartes météorologiques à partir de données 
+                issues de l’API SYNOP de Météo-France. L’application suit une architecture MVC,
+                avec une base de données SQL pour la gestion des données statiques 
+                (comptes utilisateurs) et des requêtes à l'API pour les données météo.
+            </p>
+            <a href="https://github.com/edouard-peyrouty/Application-web-visualisation-donnees-meteorologiques" class="nav-btn btn-github" target="_blank">
+                Voir le code source
+            </a>
+        </section>
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Cartes et courbes</h2>
+                <p>
+                    L’application permet aux utilisateurs de choisir les données météorologiques
+                    à visualiser et de les restituer sous forme de courbes ou de cartes
+                    météorologiques.
+                </p>
+                <div><img class="img-projet" src="/assets/images/projets/projet1/carte_et_courbe.png" alt="Exemples de cartes et courbes météorologiques générées par l'application"></div>
+            </section>
+        </div>
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Systèmes de comptes</h2>
+                <p>
+                    L’application intègre un système complet de gestion des comptes utilisateurs 
+                    et des sessions, incluant l’inscription, la connexion et la déconnexion. 
+                    L’accès aux fonctionnalités est conditionné à une validation préalable des 
+                    comptes par un administrateur, qui dispose également de la possibilité de 
+                    gérer et supprimer les comptes si nécessaire.
+                </p>
+                <div><img class="img-projet" src="/assets/images/projets/projet1/comptes.png" alt="Interface de connexion"></div>
+            </section>
+        </div>
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Architecture</h2>
+                <p>
+                    L’application suit une architecture MVC (Modèle-Vue-Contrôleur) avec un  premier 
+                    modèle dédié à la base de données SQL gérant les données utilisateurs et un second chargé 
+                    des requêtes à l’API météo.
+                </p>
+                <div><img class="img-projet" src="/assets/images/projets/projet1/architecture.png" alt="Schéma de l'architecture MVC de l'application"></div>
+            </section>
+        </div>
+        <div class="grid-container">
+            <section class="color-box last">
+                <h2>Technologies et langages utilisés</h2>
+                <div class="logos">
+                    <div><img src="/assets/images/langages/php.png" alt="PHP" title="PHP"></div>
+                    <div><img src="/assets/images/langages/sql.png" alt="SQL" title="SQL"></div>
+                    <div><img src="/assets/images/langages/html.png" alt="HTML" title="HTML"></div>
+                    <div><img src="/assets/images/langages/css.png" alt="CSS" title="CSS"></div>
+                    <div><img class="fullwidth" src="/assets/images/langages/javascript.png" alt="JavaScript" title="JavaScript"></div>
+                    <div><img class="fullwidth" src="/assets/images/frameworks/leaflet.png" alt="Leaflet" title="Leaflet"></div>
+                    <div><img src="/assets/images/frameworks/chart_js.jpg" alt="Chart.js" title="Chart.js"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+</body>
+</html>

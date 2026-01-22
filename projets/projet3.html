@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Edouard Peyrouty</title>
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <script src="/assets/js/layout.js" defer></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav id="header"></nav>
+
+    <main>
+        <section>
+            <h1>Jeu de la vie (Conway’s Game of Life)</h1>
+            <p class="search">
+                Ce projet est une implémentation du Jeu de la vie de Conway avec interface graphique
+                en Python Tkinter.
+            </p>
+            <a href="https://github.com/edouard-peyrouty/Jeu-de-la-vie" class="nav-btn btn-github" target="_blank">
+                Voir le code source
+            </a>
+        </section>
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Le jeu de la vie c'est quoi ?</h2>
+                <p>
+                    Le Jeu de la vie est un automate cellulaire imaginé par le mathématicien John Conway.
+                    Il simule l’évolution d’une population de cellules sur une grille bidimensionnelle, 
+                    où chaque cellule peut être vivante ou morte. À chaque itération, l’état de la 
+                    grille évolue automatiquement selon des règles simples basées sur le nombre de 
+                    cellules voisines :
+                </p>
+                <ul>
+                    <li>Une cellule vivante survit si elle a 2 ou 3 voisines vivantes</li>
+                    <li>Une cellule vivante meurt par isolement ou surpopulation sinon</li>
+                    <li>Une cellule morte devient vivante si elle a exactement 3 voisines vivantes</li>
+                </ul>
+                <p>
+                    Malgré la simplicité de ces règles, le système génère des comportements complexes 
+                    et émergents, illustrant comment des règles locales peuvent produire des dynamiques 
+                    globales.  
+                </p>
+            </section>
+        </div>
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Utilisation</h2>
+                <p>
+                    L'utilisateur peut choisir l'état initial de la grille en cliquant sur les 
+                    cellules, puis faire avancer la simulation au pas à pas.
+                </p>
+                <div><img class="img-projet" src="/assets/images/projets/projet3/jeu_de_la_vie.png" alt="Exemples de cartes et courbes météorologiques générées par l'application"></div>
+            </section>
+        </div>
+        <div class="grid-container">
+            <section class="color-box last">
+                <h2>Technologies et langages utilisés</h2>
+                <div class="logos">
+                    <div><img src="/assets/images/langages/python.jpg" alt="Python" title="Python"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+</body>
+</html>
