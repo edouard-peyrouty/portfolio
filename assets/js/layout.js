@@ -1,4 +1,6 @@
-fetch("/portfolio/partials/header.html")
+const isGithubPages = location.hostname.endsWith("github.io");
+
+fetch(isGithubPages ? "/portfolio/partials/header.html" : "/partials/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -6,7 +8,7 @@ fetch("/portfolio/partials/header.html")
   })
   .catch(console.error);
 
-fetch("/portfolio/partials/footer.html")
+fetch(isGithubPages ? "/portfolio/partials/footer.html" : "/partials/footer.html")
   .then(res => res.text())
   .then(data => {
     const footer = document.getElementById("footer");
@@ -20,7 +22,7 @@ fetch("/portfolio/partials/footer.html")
 
 // Fonction pour définir le bouton de navigation actif
 function setActiveNav() {
-    const currentPage = window.location.pathname.split("/")[2] || 'index.html';
+    const currentPage = window.location.pathname.split("/")[isGithubPages ? 2 : 1] || 'index.html';
     const navButtons = document.querySelectorAll(".nav-btn");    
     navButtons.forEach(button => {
         const buttonPage = button.getAttribute("href");

@@ -6,7 +6,15 @@
     <title>Portfolio - Edouard Peyrouty</title>
     <link rel="stylesheet" href="assets/style/style.css">
     <script src="assets/js/layout.js" defer></script>
-    <base href="/portfolio/">
+    <script>
+        (function () {
+            const isGithubPages = location.hostname.endsWith("github.io");
+            const base = document.createElement("base");
+            base.href = isGithubPages ? "/portfolio/" : "/";
+            document.head.prepend(base);
+        })();
+    </script>
+
 </head>
 <body>
     <!-- Navigation bar -->
