@@ -23,7 +23,7 @@ function setActiveNav() {
     const currentPage = window.location.pathname.split("/")[2] || 'index.html';
     const navButtons = document.querySelectorAll(".nav-btn");    
     navButtons.forEach(button => {
-        const buttonPage = button.getAttribute("href").split("/")[1];
+        const buttonPage = button.getAttribute("href");
         if (buttonPage === currentPage) {
             button.classList.add("active");
         } else {
