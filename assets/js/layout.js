@@ -37,3 +37,10 @@ function setActiveNav() {
         });    
     });
 }
+
+function boutonCopier(text, bouton) {
+  navigator.clipboard.writeText(text).then(() => {
+    bouton.textContent = '✓ Copié';
+    setTimeout(() => bouton.textContent = 'Copier', 3000);
+  });
+}
