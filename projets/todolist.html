@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Edouard Peyrouty</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <script src="../assets/js/layout.js" defer></script>
+    <script>
+        (function () {
+            const isGithubPages = location.hostname.endsWith("github.io");
+            const base = document.createElement("base");
+            base.href = isGithubPages ? "/portfolio/" : "/";
+            document.head.prepend(base);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav id="header"></nav>
+
+    <main>
+        <section>
+            <h1>Todo List</h1>
+            <p class="search">
+                Application web développée en Python avec le framework Flask, permettant de 
+                gérer une liste de tâches. L'application propose la création, modification et 
+                suppression de tâches, un système de filtrage par statut, ainsi qu'une corbeille 
+                permettant de restaurer les tâches supprimées avant de les effacer définitivement.
+            </p>
+            <a href="https://github.com/edouard-peyrouty/TodoList" class="nav-btn btn-github" target="_blank">
+                Voir le code source
+            </a>
+            <a href="https://edouardpeyrouty.pythonanywhere.com" class="nav-btn" target="_blank">
+                Voir la démo
+            </a>
+        </section>
+
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Gestion et filtrage des tâches</h2>
+                <p>
+                    L'application permet de créer des tâches avec un titre et une description, 
+                    de les modifier, de les marquer comme terminées et de les filtrer selon leur 
+                    statut : toutes, en cours ou terminées. Chaque tâche est supprimable 
+                    individuellement depuis la liste.
+                </p>
+                <div><img class="img-projet" src="assets/images/projets/todolist/todos.png" alt="Vue liste des tâches avec filtres"></div>
+            </section>
+            <section class="color-box">
+                <h2>Corbeille et restauration</h2>
+                <p>
+                    Les tâches supprimées sont déplacées dans une corbeille plutôt qu'effacées 
+                    immédiatement, offrant la possibilité de les restaurer en cas de suppression 
+                    accidentelle. Un bouton permet de vider définitivement la corbeille en une 
+                    seule action.
+                </p>
+                <div><img class="img-projet" src="assets/images/projets/todolist/corbeille.png" alt="Vue corbeille avec restauration des tâches"></div>
+            </section>
+        </div>
+
+        <div class="grid-container">
+            <section class="color-box">
+                <h2>Architecture et base de données</h2>
+                <p>
+                    L'application suit une architecture MVC : le fichier principal définit les routes 
+                    Flask qui délèguent chaque action à un contrôleur central gérant la logique métier. 
+                    Ce contrôleur s'appuie sur deux repositories distincts — un pour les tâches actives, 
+                    un pour les tâches supprimées — qui accèdent chacun à leur table dans une base de 
+                    données SQL locale. Les données sont ensuite transmises aux templates Jinja2 pour 
+                    le rendu des vues.
+                </p>
+            </section>
+        </div>
+
+        <div class="grid-container">
+            <section class="color-box last">
+                <h2>Technologies et langages utilisés</h2>
+                <div class="logos">
+                    <div><img src="assets/images/langages/python.jpg" alt="Python" title="Python"></div>
+                    <div><img src="assets/images/frameworks/flask.png" alt="Flask" title="Flask"></div>
+                    <div><img src="assets/images/langages/html.png" alt="HTML" title="HTML"></div>
+                    <div><img src="assets/images/langages/css.png" alt="CSS" title="CSS"></div>
+                    <div><img class="fullwidth" src="assets/images/langages/javascript.png" alt="JavaScript" title="JavaScript"></div>
+                    <div><img src="assets/images/langages/sql.png" alt="SQL" title="SQL"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+</body>
+</html>
