@@ -49,6 +49,7 @@ nav, footer {
     gap: 10px;
     padding: 10px;
     margin: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 nav, footer, table {
@@ -158,9 +159,10 @@ table a {
     border-radius: 30px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.color-box div:has(img) {
+.color-box div:has(img), .color-box div:has(canvas) {
     margin-top: auto;
 }
 
@@ -220,6 +222,7 @@ img.fullwidth {
 .grid-container-projects a {    
     text-decoration: none;
     transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .grid-container-projects a:hover {  

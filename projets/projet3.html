@@ -60,12 +60,14 @@
                     dessiner votre propre configuration en cliquant sur les cellules, puis de 
                     lancer la simulation.
                 </p>             
-                <iframe 
-                    src="https://raw.githack.com/edouard-peyrouty/Jeu-de-la-vie/main/jeu_de_la_vie.html" 
-                    frameborder="0"
-                    height="500px"
-                    scrolling="no">
-                </iframe>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <canvas id="canvas"></canvas>
+                    <nav class="controls">
+                        <a id="btnPlay" class="nav-btn">Pause</a>
+                        <a id="btnRandom" class="nav-btn">Aléatoire</a>
+                        <a id="btnClear" class="nav-btn">Effacer</a>
+                    </nav>
+                </div>
             </section>
         </div>
         <div class="grid-container">
@@ -93,5 +95,39 @@
 
     <!-- Footer -->
     <footer id="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/edouard-peyrouty/Jeu-de-la-vie@main/JavaScript/jeu-de-la-vie.js"></script>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const btnPlay = document.getElementById('btnPlay');
+
+        const game = createGameOfLife(canvas, {
+            rows: 25,
+            cell: 17,
+            borderRadius: 3,
+            aliveColor: '#CA3C66',
+            deadColor: '#E8AABE',
+            borderColor: '#EFC4D2',
+            borderWidth: 2,
+            clickable: true,
+            speed: 120,
+            density: 0.3
+        });
+
+        btnPlay.addEventListener('click', function() {
+            const isNowRunning = game.toggle();
+            this.textContent = isNowRunning ? 'Pause' : 'Lancer';
+        });
+
+        document.getElementById('btnRandom').addEventListener('click', () => game.randomize());
+
+        document.getElementById('btnClear').addEventListener('click', () => {
+            game.clear();
+            btnPlay.textContent = 'Lancer';
+        });
+
+        game.randomize();
+        game.start();
+    </script>
 </body>
 </html>

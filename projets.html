@@ -36,7 +36,7 @@
             </a>
             <a  class="color-box" href="projets/projet3.html">
                 <h2>Jeu de la vie</h2>
-                <div><img src="assets/images/projets/projet3/illustration.png" alt="Carte météorologique"></div>
+                <div><canvas id="canvas-preview"></canvas></div>
             </a>
             <a  class="color-box" href="projets/app-gestion-db.html">
                 <h2>Gestion des entreprises</h2>
@@ -54,6 +54,38 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer"></footer>    
+    <footer id="footer"></footer>
+    
+    <script src="https://cdn.jsdelivr.net/gh/edouard-peyrouty/Jeu-de-la-vie@main/JavaScript/jeu-de-la-vie.js"></script>
+    <script>
+        const preview = document.getElementById('canvas-preview');
+        const game = createGameOfLife(preview, {
+            rows: 9,
+            cols: 16,
+            cell: 20,
+            borderRadius: 3,
+            aliveColor: '#CA3C66',
+            deadColor: '#E8AABE',
+            borderColor: '#EFC4D2',
+            borderWidth: 1,
+            clickable: false,
+            speed: 200,
+            density: 0.35
+        });
+
+        const octagon = [
+            [0,0,0,1,1,0,0,0],
+            [0,0,1,0,0,1,0,0],
+            [0,1,0,0,0,0,1,0],
+            [1,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,1],
+            [0,1,0,0,0,0,1,0],
+            [0,0,1,0,0,1,0,0],
+            [0,0,0,1,1,0,0,0],
+        ];
+
+        game.setGrid(octagon);
+        game.start();
+    </script>
 </body>
 </html>

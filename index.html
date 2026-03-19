@@ -17,19 +17,33 @@
 
 </head>
 <body>
+    <!-- Gestion de l'animation du background -->
+    <canvas id="bg-canvas" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -9999;
+        pointer-events: none;
+    "></canvas>
+
     <!-- Navigation bar -->
     <nav id="header"></nav>
 
     <main>
-        <section>
-                <h1>Edouard Peyrouty</h1>
-                <p class="subtitle">Développeur d'applications - Alternant en BUT Informatique</p>
-                <!-- <p class="experience">2 ans d'expérience en entreprise</p> -->
-                <!-- <p class="search">Recherche une alternance en cycle ingénieur informatique à partir de septembre 2026</p> -->
-        </section>
+
+        <div class="color-box" style="background-color: rgba(255, 255, 255, 0.5);">
+            <section>
+                    <h1>Edouard Peyrouty</h1>
+                    <p class="subtitle">Développeur d'applications - Alternant en BUT Informatique</p>
+                    <p class="experience">2 ans d'expérience en entreprise</p>
+                    <p class="search">Recherche une alternance en cycle ingénieur informatique à partir de septembre 2026</p>
+            </section>
+        </div>
 
         <!-- Projects preview section -->
-        <div class="grid-container-projects">
+        <!-- <div class="grid-container-projects">
             <a class="color-box" href="projets/projet1.html">
                 <h2>Visualisation météo</h2>
                 <div><img src="assets/images/projets/projet1/carte.png" alt="Carte météorologique"></div>
@@ -42,10 +56,41 @@
                 <h2>Jeu de la vie</h2>
                 <div><img src="assets/images/projets/projet3/illustration.png" alt="Carte météorologique"></div>
             </a>
-        </div>
+        </div> -->
     </main>
 
     <!-- Footer -->
     <footer id="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/edouard-peyrouty/Jeu-de-la-vie@main/JavaScript/jeu-de-la-vie.js"></script>
+    <script>
+        const bg = document.getElementById('bg-canvas');
+        bg.width = window.innerWidth;
+        bg.height = window.innerHeight;
+
+        let size = 40;
+
+        const game = createGameOfLife(bg, {
+            rows: Math.ceil(window.innerHeight / size),
+            cols: Math.ceil(window.innerWidth / size),
+            cell: size,
+            borderRadius: 5,
+            aliveColor: '#CA3C66',
+            deadColor: 'transparent',
+            borderColor: 'transparent',
+            borderWidth: 5,
+            clickable: false,
+            speed: 100,
+            density: 0.3
+        });
+
+        game.randomize();
+        game.start();
+
+        window.addEventListener('resize', () => {
+            bg.width = window.innerWidth;
+            bg.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
