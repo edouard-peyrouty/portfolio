@@ -65,7 +65,8 @@ function injectElement(id, path) {
     // Réexécute les scripts si besoin
     if (path.includes('projet3')) {
         const script = document.createElement('script');
-        script.src = '/assets/js/projet3.js?t=' + Date.now();
+        const BASE = location.hostname.endsWith("github.io") ? "/portfolio" : "";
+        script.src = BASE + '/assets/js/projet3.js?t=' + Date.now();
         script.type = 'module';
         div.appendChild(script);
     }
