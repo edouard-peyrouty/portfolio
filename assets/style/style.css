@@ -7,6 +7,7 @@
 html {
     overflow-y: scroll;
     scrollbar-gutter: stable;
+    overflow-x: hidden; 
 }
 
 /* ===== VARIABLES DE COULEURS ===== */
@@ -26,15 +27,15 @@ body {
     align-items: center;
     min-height: 100vh;
     color: var(--dark-purple);
-    /* color: #2B0F1A; */
     max-height: 100%;
+    padding: 0 30px;    
 }
 
 main {
     flex: 1;
     opacity: 0;
     transition: opacity 1s ease;
-    width: 90%;
+    width: 100%;
 }
 
 /* ===== NAVBAR ET FOOTER===== */
@@ -49,7 +50,12 @@ nav, footer {
     gap: 10px;
     padding: 10px;
     margin: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.2) inset,  /* reflet haut intérieur */
+        0 -2px 0 rgba(0, 0, 0, 0.05) inset,       /* ombre bas intérieur */
+        0 8px 20px rgba(0, 0, 0, 0.15),            /* ombre portée */
+        0 2px 4px rgba(0, 0, 0, 0.1);              /* ombre proche */
 }
 
 nav, footer, table {
@@ -154,20 +160,28 @@ table a {
 .color-box {
     background-color: rgba(255, 255, 255, 0.3);
     color: var(--dark-purple);
-    padding: 20px;
+    padding: 30px;
     margin-top: 30px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.2) inset,  /* reflet haut intérieur */
+        0 -2px 0 rgba(0, 0, 0, 0.05) inset,       /* ombre bas intérieur */
+        0 8px 20px rgba(0, 0, 0, 0.15),            /* ombre portée */
+        0 2px 4px rgba(0, 0, 0, 0.1);              /* ombre proche */
+}
+
+.color-box.active {
+    border: solid 2px var(--dark-purple);
+}
+
+.color-box.active h2 {
+    color: var(--dark-purple);
 }
 
 .color-box div:has(img), .color-box div:has(canvas) {
     margin-top: auto;
-}
-
-.color-box.last {
-    margin-bottom: 20px;
 }
 
 .color-box h2, h1, span {
@@ -200,11 +214,26 @@ img.fullwidth {
     border-radius: 10px;
 }
 
-.grid-container-projects {
+.grid-container-projects {    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    column-gap: 30px;
+    gap: 30px;
     margin-bottom: 20px;
+    padding: 30px; 
+    transition: all 0.7s ease; 
+    max-width: 100%;
+    border-radius: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.2) inset,  /* reflet haut intérieur */
+        0 -2px 0 rgba(0, 0, 0, 0.05) inset,       /* ombre bas intérieur */
+        0 8px 20px rgba(0, 0, 0, 0.15),            /* ombre portée */
+        0 2px 4px rgba(0, 0, 0, 0.1);              /* ombre proche */
+}
+
+.grid-container-projects .color-box { 
+    transition: all 0.3s ease;   
 }
 
 .img-projet {
@@ -221,13 +250,12 @@ img.fullwidth {
 
 .grid-container-projects a {    
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+    margin: 0;
 }
 
 .grid-container-projects a:hover {  
     transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .grid-container-projects a:hover h2 {
@@ -240,6 +268,61 @@ img.fullwidth {
     border-radius: 10px;
 }
 
-.img-projet-small {
-    height: 150px;
+.controls {
+    z-index: 900;
+}
+
+p {
+    text-align: justify;
+}
+
+#projet-layout {
+    display: flex;
+    gap: 30px;
+    align-items: start;
+}
+
+#container-projet-details {
+    display: none;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.7s ease;
+}
+
+#projet-details {
+    display: none;
+    border-radius: 60px;
+    flex: 1;
+    transition: all 0.5s ease;
+    margin: 0;
+}
+
+#btn-close {
+    display: none;
+    position: static;
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    color: black;   
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    margin-left: calc(100% - 65px);
+    margin-bottom: 5px;
+    margin-top: 2px;
+    font-weight: 500;
+
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.2) inset,  /* reflet haut intérieur */
+        0 -2px 0 rgba(0, 0, 0, 0.05) inset,       /* ombre bas intérieur */
+        0 8px 20px rgba(0, 0, 0, 0.15),            /* ombre portée */
+        0 2px 4px rgba(0, 0, 0, 0.1);              /* ombre proche */
+}
+
+#btn-close:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    font-weight: 700;
+    color: var(--dark-purple);
 }

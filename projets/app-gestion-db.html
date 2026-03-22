@@ -1,81 +1,54 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Edouard Peyrouty</title>
-    <link rel="stylesheet" href="../assets/style/style.css">
-    <script src="../assets/js/layout.js" defer></script>
-    <script>
-        (function () {
-            const isGithubPages = location.hostname.endsWith("github.io");
-            const base = document.createElement("base");
-            base.href = isGithubPages ? "/portfolio/" : "/";
-            document.head.prepend(base);
-        })();
-    </script>
-</head>
-<body>
-    <!-- Navigation bar -->
-    <nav id="header"></nav>
-
-    <main>
-        <section>
-            <h1>Application web de gestion de base de données</h1>
-            <p class="search">
-                Application web développée en C# avec le framework Blazor (.NET) permettant 
-                de gérer les produits et les entreprises d'une base de données. L'application 
-                offre une interface interactive pour consulter, ajouter, modifier et supprimer 
-                les entrées.
-            </p>
-        </section>
-        <div class="grid-container">
-            <section class="color-box">
-                <h2>Gestion des produits</h2>
-                <p>
-                    La vue Produits affiche l'ensemble des articles enregistrés en base, avec leurs 
-                    attributs (gencode, libellé, prix, statut, date d'ajout) et l'entreprise associée. 
-                    Chaque ligne propose des actions de modification et de suppression, ainsi qu'un 
-                    bouton d'ajout global pour créer de nouveaux produits.
-                </p>
-                <div><img class="img-projet" src="assets/images/projets/app-gestion-db/produits.png" alt="Interface de gestion des produits"></div>
-            </section>
-            <section class="color-box">
-                <h2>Gestion des entreprises</h2>
-                <p>
-                    La vue Companies liste les entreprises avec le nombre de produits rattachés à 
-                    chacune. Depuis la page d'édition d'une entreprise, il est possible de modifier 
-                    son libellé et de gérer directement ses produits associés, offrant ainsi une 
-                    navigation centralisée entre les deux entités.
-                </p>
-                <div><img class="img-projet" src="assets/images/projets/app-gestion-db/companie.png" alt="Interface de gestion des entreprises"></div>
-            </section>
+<body></body>
+<section>
+    <h1>Application web de gestion de base de données</h1>
+    <p class="search">
+        Application web développée en C# avec le framework Blazor (.NET) permettant 
+        de gérer les produits et les entreprises d'une base de données. L'application 
+        offre une interface interactive pour consulter, ajouter, modifier et supprimer 
+        les entrées.
+    </p>
+</section>
+<div class="grid-container">
+    <section class="color-box">
+        <h2>Gestion des produits</h2>
+        <p>
+            La vue Produits affiche l'ensemble des articles enregistrés en base, avec leurs 
+            attributs (gencode, libellé, prix, statut, date d'ajout) et l'entreprise associée. 
+            Chaque ligne propose des actions de modification et de suppression, ainsi qu'un 
+            bouton d'ajout global pour créer de nouveaux produits.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/app-gestion-db/produits.png" alt="Interface de gestion des produits"></div>
+    </section>
+    <section class="color-box">
+        <h2>Gestion des entreprises</h2>
+        <p>
+            La vue Companies liste les entreprises avec le nombre de produits rattachés à 
+            chacune. Depuis la page d'édition d'une entreprise, il est possible de modifier 
+            son libellé et de gérer directement ses produits associés, offrant ainsi une 
+            navigation centralisée entre les deux entités.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/app-gestion-db/companie.png" alt="Interface de gestion des entreprises"></div>
+    </section>
+</div>
+<div class="grid-container">
+    <section class="color-box">
+        <h2>Architecture</h2>
+        <p>
+            L'application suit une architecture MVC adaptée à Blazor, avec une séparation 
+            claire des responsabilités : les modèles définissent les entités métier, les DTOs 
+            assurent le transfert des données entre les couches, et les services encapsulent 
+            la logique d'accès à la base de données. Les composants Blazor jouent le rôle de 
+            vues et de contrôleurs, en s'appuyant sur l'injection de dépendances native de .NET.
+        </p>
+    </section>
+</div>
+<div class="grid-container">
+    <section class="color-box last">
+        <h2>Technologies et langages utilisés</h2>
+        <div class="logos">
+            <div><img src="assets/images/langages/Csharp.png" alt="C#" title="C#"></div>
+            <div><img class="fullwidth" src="assets/images/frameworks/dotnet.png" alt=".NET" title=".NET"></div>
+            <div><img src="assets/images/frameworks/blazor.png" alt="Blazor" title="Blazor"></div>
         </div>
-        <div class="grid-container">
-            <section class="color-box">
-                <h2>Architecture</h2>
-                <p>
-                    L'application suit une architecture MVC adaptée à Blazor, avec une séparation 
-                    claire des responsabilités : les modèles définissent les entités métier, les DTOs 
-                    assurent le transfert des données entre les couches, et les services encapsulent 
-                    la logique d'accès à la base de données. Les composants Blazor jouent le rôle de 
-                    vues et de contrôleurs, en s'appuyant sur l'injection de dépendances native de .NET.
-                </p>
-            </section>
-        </div>
-        <div class="grid-container">
-            <section class="color-box last">
-                <h2>Technologies et langages utilisés</h2>
-                <div class="logos">
-                    <div><img src="assets/images/langages/Csharp.png" alt="C#" title="C#"></div>
-                    <div><img class="fullwidth" src="assets/images/frameworks/dotnet.png" alt=".NET" title=".NET"></div>
-                    <div><img src="assets/images/frameworks/blazor.png" alt="Blazor" title="Blazor"></div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer id="footer"></footer>
-</body>
-</html>
+    </section>
+</div>

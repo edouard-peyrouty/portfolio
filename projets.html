@@ -6,6 +6,7 @@
     <title>Portfolio - Edouard Peyrouty</title>
     <link rel="stylesheet" href="assets/style/style.css">
     <script src="assets/js/layout.js" defer></script>
+    <script type="module" src="assets/js/projets.js" defer></script>
     <script>
         (function () {
             const isGithubPages = location.hostname.endsWith("github.io");
@@ -20,72 +21,45 @@
     <nav id="header"></nav>
 
     <main>     
-        <section>
-                <h1>Mes Projets</h1>
-                <!-- Barre de recherche ? -->
-        </section>
+        <h1 style="margin: 0px 0px 20px 60px;">Mes Projets</h1>
+        <div id="projet-layout">
+            <div class="grid-container-projects">
+                <a class="color-box" data-src="projets/projet1.html">
+                    <h2>Visualisation météo</h2>
+                    <div><img src="assets/images/projets/projet1/carte.png" alt="Carte météorologique"></div>
+                </a>
+                <a class="color-box" data-src="projets/projet2.html">
+                    <h2>Automatisation CI/CD</h2>
+                    <div><img src="assets/images/projets/projet2/illustration.png" alt="Carte météorologique"></div>
+                </a>
+                <a  class="color-box" data-src="projets/projet3.html">
+                    <h2>Jeu de la vie</h2>
+                    <div><canvas id="canvas-preview"></canvas></div>
+                </a>
+                <a  class="color-box" data-src="projets/app-gestion-db.html">
+                    <h2>Gestion des entreprises</h2>
+                    <div><img src="assets/images/projets/app-gestion-db/companie.png" alt="Interface de gestion des entreprises"></div>
+                </a>
+                <a  class="color-box" data-src="projets/microservices-nestjs.html">
+                    <h2>Microservices NestJS</h2>
+                    <div><img src="assets/images/projets/microservices-nestjs/illustration.png" alt="Schéma de l'architecture microservices et de l'API Gateway"></div>
+                </a>
+                <a  class="color-box" data-src="projets/todolist.html">
+                    <h2>Todo List</h2>
+                    <div><img src="assets/images/projets/todolist/todos.png" alt="Schéma de l'architecture microservices et de l'API Gateway"></div>
+                </a>
+            </div>
 
-        <div class="grid-container-projects">
-            <a class="color-box" href="projets/projet1.html">
-                <h2>Visualisation météo</h2>
-                <div><img src="assets/images/projets/projet1/carte.png" alt="Carte météorologique"></div>
-            </a>
-            <a class="color-box" href="projets/projet2.html">
-                <h2>Automatisation CI/CD</h2>
-                <div><img src="assets/images/projets/projet2/illustration.png" alt="Carte météorologique"></div>
-            </a>
-            <a  class="color-box" href="projets/projet3.html">
-                <h2>Jeu de la vie</h2>
-                <div><canvas id="canvas-preview"></canvas></div>
-            </a>
-            <a  class="color-box" href="projets/app-gestion-db.html">
-                <h2>Gestion des entreprises</h2>
-                <div><img src="assets/images/projets/app-gestion-db/companie.png" alt="Interface de gestion des entreprises"></div>
-            </a>
-            <a  class="color-box" href="projets/microservices-nestjs.html">
-                <h2>Microservices NestJS</h2>
-                <div><img src="assets/images/projets/microservices-nestjs/illustration.png" alt="Schéma de l'architecture microservices et de l'API Gateway"></div>
-            </a>
-            <a  class="color-box" href="projets/todolist.html">
-                <h2>Todo List</h2>
-                <div><img src="assets/images/projets/todolist/todos.png" alt="Schéma de l'architecture microservices et de l'API Gateway"></div>
-            </a>
+            <div id="container-projet-details">
+                <button id="btn-close">✕</button>
+                <div id="projet-details" class="color-box"></div>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer id="footer"></footer>
-    
-    <script src="https://cdn.jsdelivr.net/gh/edouard-peyrouty/Jeu-de-la-vie@main/JavaScript/jeu-de-la-vie.js"></script>
-    <script>
-        const preview = document.getElementById('canvas-preview');
-        const game = createGameOfLife(preview, {
-            rows: 9,
-            cols: 16,
-            cell: 20,
-            borderRadius: 3,
-            aliveColor: '#CA3C66',
-            deadColor: '#E8AABE',
-            borderColor: '#EFC4D2',
-            borderWidth: 1,
-            clickable: false,
-            speed: 200,
-            density: 0.35
-        });
-
-        const octagon = [
-            [0,0,0,1,1,0,0,0],
-            [0,0,1,0,0,1,0,0],
-            [0,1,0,0,0,0,1,0],
-            [1,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,1],
-            [0,1,0,0,0,0,1,0],
-            [0,0,1,0,0,1,0,0],
-            [0,0,0,1,1,0,0,0],
-        ];
-
-        game.setGrid(octagon);
-        game.start();
-    </script>
+    <footer id="footer"
+    scroll-behavior: smooth;
+    ></footer>
 </body>
 </html>

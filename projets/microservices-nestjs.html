@@ -1,127 +1,100 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Edouard Peyrouty</title>
-    <link rel="stylesheet" href="../assets/style/style.css">
-    <script src="../assets/js/layout.js" defer></script>
-    <script>
-        (function () {
-            const isGithubPages = location.hostname.endsWith("github.io");
-            const base = document.createElement("base");
-            base.href = isGithubPages ? "/portfolio/" : "/";
-            document.head.prepend(base);
-        })();
-    </script>
-</head>
-<body>
-    <!-- Navigation bar -->
-    <nav id="header"></nav>
+<body></body>
+<section>
+    <h1>Architecture microservices avec NestJS</h1>
+    <p class="search">
+        Application backend développée en TypeScript avec le framework NestJS, 
+        implémentant une architecture microservices composée de trois services 
+        indépendants : un service de gestion des utilisateurs, un service de gestion 
+        des commandes, et une API Gateway centralisant les requêtes entrantes. 
+        L'ensemble est conteneurisé avec Docker et sécurisé par authentification JWT.
+    </p>
+    <a href="https://github.com/edouard-peyrouty/microservices-NestJS" class="nav-btn btn-github" target="_blank">
+        Voir le code source
+    </a>
+</section>
 
-    <main>
-        <section>
-            <h1>Architecture microservices avec NestJS</h1>
-            <p class="search">
-                Application backend développée en TypeScript avec le framework NestJS, 
-                implémentant une architecture microservices composée de trois services 
-                indépendants : un service de gestion des utilisateurs, un service de gestion 
-                des commandes, et une API Gateway centralisant les requêtes entrantes. 
-                L'ensemble est conteneurisé avec Docker et sécurisé par authentification JWT.
-            </p>
-            <a href="https://github.com/edouard-peyrouty/microservices-NestJS" class="nav-btn btn-github" target="_blank">
-                Voir le code source
-            </a>
-        </section>
+<div class="grid-container">
+    <section class="color-box">
+        <h2>Architecture microservices et API Gateway</h2>
+        <p>
+            Le projet repose sur trois services NestJS tournant en parallèle sur des ports 
+            distincts. L'API Gateway (port 3002) intercepte toutes les requêtes entrantes 
+            et les redirige via Axios vers le users-service (port 3000) ou l'orders-service 
+            (port 3001) selon l'URL, en conservant la méthode HTTP et le body original.
+        </p>
+        </br>
+        <p>
+            Chaque service suit une architecture Clean avec une séparation stricte des 
+            couches : les DTOs avec validation via class-validator dans <span>adapter.in</span>, 
+            la logique métier dans <span>application</span>, les entités dans <span>domain</span> 
+            et l'accès aux données dans <span>infrastructure</span>. L'injection de dépendances 
+            est gérée nativement par les modules NestJS.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/microservices-nestjs/diagramme_architecture.png" alt="Schéma de l'architecture microservices et de l'API Gateway"></div>
+    </section>
+</div>
 
-        <div class="grid-container">
-            <section class="color-box">
-                <h2>Architecture microservices et API Gateway</h2>
-                <p>
-                    Le projet repose sur trois services NestJS tournant en parallèle sur des ports 
-                    distincts. L'API Gateway (port 3002) intercepte toutes les requêtes entrantes 
-                    et les redirige via Axios vers le users-service (port 3000) ou l'orders-service 
-                    (port 3001) selon l'URL, en conservant la méthode HTTP et le body original.
-                </p>
-                </br>
-                <p>
-                    Chaque service suit une architecture Clean avec une séparation stricte des 
-                    couches : les DTOs avec validation via class-validator dans <span>adapter.in</span>, 
-                    la logique métier dans <span>application</span>, les entités dans <span>domain</span> 
-                    et l'accès aux données dans <span>infrastructure</span>. L'injection de dépendances 
-                    est gérée nativement par les modules NestJS.
-                </p>
-                <div><img class="img-projet" src="assets/images/projets/microservices-nestjs/diagramme_architecture.png" alt="Schéma de l'architecture microservices et de l'API Gateway"></div>
-            </section>
+<div class="grid-container">
+    <section class="color-box">
+        <h2>Sécurité JWT</h2>
+        <p>
+            L'authentification repose sur des tokens JWT générés par le users-service 
+            lors de la connexion. Chaque service dispose d'un guard qui intercepte les 
+            requêtes entrantes, vérifie la présence et la validité du token dans le header 
+            Authorization, et renvoie une erreur 401 si le token est absent ou invalide.
+        </p>
+    </section>
+    <section class="color-box">
+        <h2>Conteneurisation Docker</h2>
+        <p>
+            Chaque service est conteneurisé avec Docker, avec des Dockerfiles dédiés 
+            installant les dépendances et exposant les ports nécessaires. Un fichier 
+            docker-compose.yml orchestre le lancement simultané des trois services, 
+            simplifiant le développement et le déploiement.
+        </p>
+    </section>
+</div>
+
+<div class="grid-container">            
+    <section class="color-box">
+        <h2>Documentation Swagger</h2>
+        <p>
+            Chaque service expose une documentation interactive Swagger accessible à 
+            <span>/api-docs</span>, générée automatiquement depuis les décorateurs NestJS 
+            présents dans les DTOs et les controllers. Elle liste l'ensemble des endpoints 
+            avec leurs paramètres, types de réponses et codes HTTP possibles, et intègre 
+            l'authentification Bearer pour tester les routes protégées directement depuis 
+            l'interface.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/microservices-nestjs/swagger.png" alt="Documentation Swagger des deux services"></div>
+    </section>
+</div>
+
+<div class="grid-container">            
+    <section class="color-box">
+        <h2>Tests unitaires Jest et tests d'intégration Supertest</h2>
+        <p>
+            Les services sont couverts par des tests unitaires Jest ciblant la logique 
+            métier des services, avec des repositories mockés pour isoler les comportements 
+            à tester. Des tests d'intégration via Supertest viennent compléter la couverture 
+            en testant les endpoints REST réels, incluant l'authentification JWT et les règles 
+            métier comme l'interdiction de passer une commande à SHIPPED sans être 
+            préalablement à PAID. Un fichier de tests end-to-end passant par la gateway 
+            est également disponible, utilisant Axios pour simuler le parcours complet d'une requête.
+        </p>
+    </section>
+</div>
+
+<div class="grid-container">
+    <section class="color-box last">
+        <h2>Technologies et langages utilisés</h2>
+        <div class="logos">
+            <div><img class="fullwidth" src="assets/images/langages/typescript.png" alt="TypeScript" title="TypeScript"></div>
+            <div><img class="fullwidth" src="assets/images/frameworks/nestjs.jpg" alt="NestJS" title="NestJS"></div>
+            <div><img class="fullwidth" src="assets/images/langages/javascript.png" alt="JavaScript" title="JavaScript"></div>
+            <div><img class="fullwidth" src="assets/images/outils/docker.png" alt="Docker" title="Docker"></div>
+            <div><img class="fullwidth" src="assets/images/frameworks/swagger.png" alt="Swagger" title="Swagger"></div>
+            <div><img class="fullwidth" src="assets/images/frameworks/jest.png" alt="Jest" title="Jest"></div>
         </div>
-
-        <div class="grid-container">
-            <section class="color-box">
-                <h2>Sécurité JWT</h2>
-                <p>
-                    L'authentification repose sur des tokens JWT générés par le users-service 
-                    lors de la connexion. Chaque service dispose d'un guard qui intercepte les 
-                    requêtes entrantes, vérifie la présence et la validité du token dans le header 
-                    Authorization, et renvoie une erreur 401 si le token est absent ou invalide.
-                </p>
-            </section>
-            <section class="color-box">
-                <h2>Conteneurisation Docker</h2>
-                <p>
-                    Chaque service est conteneurisé avec Docker, avec des Dockerfiles dédiés 
-                    installant les dépendances et exposant les ports nécessaires. Un fichier 
-                    docker-compose.yml orchestre le lancement simultané des trois services, 
-                    simplifiant le développement et le déploiement.
-                </p>
-            </section>
-        </div>
-
-        <div class="grid-container">            
-            <section class="color-box">
-                <h2>Documentation Swagger</h2>
-                <p>
-                    Chaque service expose une documentation interactive Swagger accessible à 
-                    <span>/api-docs</span>, générée automatiquement depuis les décorateurs NestJS 
-                    présents dans les DTOs et les controllers. Elle liste l'ensemble des endpoints 
-                    avec leurs paramètres, types de réponses et codes HTTP possibles, et intègre 
-                    l'authentification Bearer pour tester les routes protégées directement depuis 
-                    l'interface.
-                </p>
-                <div><img class="img-projet" src="assets/images/projets/microservices-nestjs/swagger.png" alt="Documentation Swagger des deux services"></div>
-            </section>
-        </div>
-
-        <div class="grid-container">            
-            <section class="color-box">
-                <h2>Tests unitaires Jest et tests d'intégration Supertest</h2>
-                <p>
-                    Les services sont couverts par des tests unitaires Jest ciblant la logique 
-                    métier des services, avec des repositories mockés pour isoler les comportements 
-                    à tester. Des tests d'intégration via Supertest viennent compléter la couverture 
-                    en testant les endpoints REST réels, incluant l'authentification JWT et les règles 
-                    métier comme l'interdiction de passer une commande à SHIPPED sans être 
-                    préalablement à PAID. Un fichier de tests end-to-end passant par la gateway 
-                    est également disponible, utilisant Axios pour simuler le parcours complet d'une requête.
-                </p>
-            </section>
-        </div>
-
-        <div class="grid-container">
-            <section class="color-box last">
-                <h2>Technologies et langages utilisés</h2>
-                <div class="logos">
-                    <div><img class="fullwidth" src="assets/images/langages/typescript.png" alt="TypeScript" title="TypeScript"></div>
-                    <div><img class="fullwidth" src="assets/images/frameworks/nestjs.jpg" alt="NestJS" title="NestJS"></div>
-                    <div><img class="fullwidth" src="assets/images/langages/javascript.png" alt="JavaScript" title="JavaScript"></div>
-                    <div><img class="fullwidth" src="assets/images/outils/docker.png" alt="Docker" title="Docker"></div>
-                    <div><img class="fullwidth" src="assets/images/frameworks/swagger.png" alt="Swagger" title="Swagger"></div>
-                    <div><img class="fullwidth" src="assets/images/frameworks/jest.png" alt="Jest" title="Jest"></div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer id="footer"></footer>
-</body>
-</html>
+    </section>
+</div>
