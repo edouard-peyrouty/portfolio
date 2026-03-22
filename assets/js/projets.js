@@ -88,17 +88,13 @@ document.querySelectorAll('.color-box[data-src]').forEach(card => {
         card.classList.add('active');
 
         // Si le panneaux des cartes de projets n'est pas déjà réduit, on le réduit
-        if (document.querySelector('.grid-container-projects').style.maxWidth !== '400px') {             
+        if (document.querySelector('.grid-container-projects').style.maxWidth !== '400px') {  
+            injectElement("projet-details", project_path);     
             SetWidthContainerProjects("400px");
             setTimeout(() => { 
-                injectElement("projet-details", project_path); 
                 requestAnimationFrame(() => {
                     containerDetails.style.display = 'block';
-                        requestAnimationFrame(() => {
-                        document.getElementById('btn-close').style.display = 'block';   
-                        document.getElementById("projet-details").style.display = 'block';
-                        containerDetails.style.transform = 'translateX(0)';
-                    });
+                    requestAnimationFrame(() => containerDetails.style.transform = 'translateX(0)');
                 });
             }, 700); // même durée que ta transition CSS
         } else {
@@ -119,7 +115,5 @@ document.getElementById('btn-close').addEventListener('click', () => {
     setTimeout(() => {
         SetWidthContainerProjects("100%")
         containerDetails.style.display = 'none';
-        document.getElementById('btn-close').style.display = 'none';   
-        document.getElementById("projet-details").style.display = 'none';
     }, 500);
 });
