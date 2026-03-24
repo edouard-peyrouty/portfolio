@@ -1,0 +1,61 @@
+<body></body>
+<section>
+    <h1>Neurone IA détecteur de couleur rouge</h1>
+    <p class="search">
+        Application web développée en Python avec Flask, implémentant un perceptron à un seul neurone 
+        capable de déterminer si une couleur est rouge ou non. Le neurone apprend en temps réel 
+        grâce aux retours de l'utilisateur, qui peut corriger les prédictions au fil des sessions.
+    </p>
+    <a href="https://github.com/edouard-peyrouty/Detecteur-IA-couleur-rouge" class="nav-btn btn-github" target="_blank">
+        Voir le code source
+    </a>
+    <a href="https://detecteur-ia-couleur-rouge.onrender.com/" class="nav-btn" target="_blank">
+        Voir la démo
+    </a>
+</section>
+
+<div class="grid-container">
+    <section class="color-box">
+        <h2>Apprentissage par feedback</h2>
+        <p>
+            L'interface affiche une couleur aléatoire et la prédiction du neurone. L'utilisateur 
+            peut valider ou corriger cette prédiction. En cas de désaccord, la couleur et le bon 
+            label sont ajoutés aux données d'entraînement, puis le neurone se réentraîne automatiquement 
+            sur l'ensemble du jeu de données mis à jour jusqu'à convergence.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/detecteur-IA-couleur-rouge/interface.png" alt="Interface de feedback"></div>
+    </section>
+    <section class="color-box">
+        <h2>Représentation géométrique des couleurs</h2>
+        <p>
+            Chaque couleur RGB est représentée comme un point dans un espace à trois dimensions, 
+            où les axes correspondent aux composantes rouge, vert et bleu (normalisées entre 0 et 1). 
+            Le neurone apprend un vecteur qui définit un plan séparateur dans cet espace : 
+            les couleurs d'un côté du plan sont classifiées comme rouges, les autres comme non rouges.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/detecteur-IA-couleur-rouge/espace3d.png" alt="Espace 3D des couleurs"></div>
+    </section>
+</div>
+
+<div class="grid-container">
+    <section class="color-box">
+        <h2>La règle du perceptron</h2>
+        <p>
+            Le neurone calcule le produit scalaire entre son vecteur de poids p = [p₁, p₂, p₃] 
+            et la couleur e = [R, G, B]. Si ce produit est supérieur ou égal à 1, la couleur est 
+            rouge. À chaque correction, les poids sont ajustés dans la direction de l'erreur avec 
+            un taux d'apprentissage ε = 0.2. Le processus se répète jusqu'à ce que l'écart 
+            entre deux états successifs soit inférieur à un seuil de convergence.
+        </p>
+    </section>
+</div>
+
+<div class="grid-container">
+    <section class="color-box last">
+        <h2>Technologies et langages utilisés</h2>
+        <div class="logos">
+            <div><img src="assets/images/langages/python.jpg" alt="Python" title="Python"></div>
+            <div><img src="assets/images/frameworks/flask.png" alt="Flask" title="Flask"></div>
+        </div>
+    </section>
+</div>

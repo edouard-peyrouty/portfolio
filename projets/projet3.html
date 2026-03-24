@@ -1,21 +1,23 @@
 <body></body>
 <section>
-    <h1>Jeu de la vie (Conway’s Game of Life)</h1>
+    <h1>Jeu de la vie (Conway's Game of Life)</h1>
     <p class="search">
-        Ce projet est une implémentation du Jeu de la vie de Conway avec interface graphique
-        en Python Tkinter.
+        Ce projet regroupe deux implémentations du Jeu de la vie de Conway : une interface 
+        graphique desktop en Python Tkinter, et un module JavaScript réutilisable intégrable 
+        dans n'importe quelle page web.
     </p>
     <a href="https://github.com/edouard-peyrouty/Jeu-de-la-vie" class="nav-btn btn-github" target="_blank">
         Voir le code source
     </a>
 </section>
+
 <div class="grid-container">
     <section class="color-box">
         <h2>Le jeu de la vie c'est quoi ?</h2>
         <p>
             Le Jeu de la vie est un automate cellulaire imaginé par le mathématicien John Conway.
-            Il simule l’évolution d’une population de cellules sur une grille bidimensionnelle, 
-            où chaque cellule peut être vivante ou morte. À chaque itération, l’état de la 
+            Il simule l'évolution d'une population de cellules sur une grille bidimensionnelle, 
+            où chaque cellule peut être vivante ou morte. À chaque itération, l'état de la 
             grille évolue automatiquement selon des règles simples basées sur le nombre de 
             cellules voisines :
         </p>
@@ -27,17 +29,32 @@
         <p>
             Malgré la simplicité de ces règles, le système génère des comportements complexes 
             et émergents, illustrant comment des règles locales peuvent produire des dynamiques 
-            globales.  
+            globales.
         </p>
     </section>
 </div>
+
+<div class="grid-container">
+    <section class="color-box">
+        <h2>Version Python Tkinter</h2>
+        <p>
+            La première implémentation utilise Tkinter pour générer une interface graphique desktop.
+            L'utilisateur dessine sa configuration initiale en cliquant sur les cellules de la grille,
+            puis fait avancer la simulation pas à pas.
+        </p>
+        <div style="display: flex; justify-content: space-around;">
+            <img class="img-projet" style="width: 40%;" src="assets/images/projets/projet3/python.png" alt="Interface Python Tkinter du jeu de la vie">
+        </div>
+    </section>
+</div>
+
 <div class="grid-container">
     <section class="color-box">
         <h2>A vous de jouer !</h2>   
         <p>
-            Une version interactive HTML/JavaScript reprenant le même algorithme vous permet de 
-            dessiner votre propre configuration en cliquant sur les cellules, puis de 
-            lancer la simulation.
+            J'ai réimplémenté l'algorithme en JavaScript et en ai fait un module réutilisable.
+            Voici une version interactive qui vous permet de dessiner votre propre configuration 
+            de départ en cliquant sur les cellules, puis de lancer la simulation.
         </p>             
         <div style="display: flex; flex-direction: column; align-items: center;">
             <canvas id="canvas"></canvas>
@@ -49,24 +66,45 @@
         </div>
     </section>
 </div>
+
 <div class="grid-container">
     <section class="color-box">
-        <h2>Utilisation</h2>
+        <h2>Module JavaScript réutilisable</h2>
         <p>
-            L'utilisateur peut choisir l'état initial de la grille en cliquant sur les 
-            cellules, puis faire avancer la simulation au pas à pas ou bien en continu.
+            L'algorithme est encapsulé dans un module JavaScript exportable, chargeable 
+            directement depuis jsDelivr sans installation. Il s'instancie sur un élément 
+            <code>&lt;canvas&gt;</code> et expose une API simple pour contrôler la simulation :
+            démarrer, mettre en pause, alterner les deux états, remplir aléatoirement ou 
+            vider la grille, et charger un pattern de départ centré automatiquement.
+        </p>
+        <p>
+            La grille est entièrement paramétrable : nombre de lignes et de colonnes 
+            indépendants, taille et arrondi des cellules, couleurs des cellules vivantes, 
+            mortes et des bordures, vitesse de simulation, densité pour le remplissage 
+            aléatoire, et interactivité à la souris activable ou non. Ces options permettent 
+            de l'utiliser aussi bien comme démo interactive cliquable que comme animation 
+            décorative en arrière-plan.
         </p>
         <div style="display: flex; justify-content: space-around;">
-            <img class="img-projet" style="width: 40%;" src="assets/images/projets/projet3/python.png" alt="Exemples de cartes et courbes météorologiques générées par l'application">
-            <img class="img-projet" style="width: 40%;"  src="assets/images/projets/projet3/html.png" alt="Exemples de cartes et courbes météorologiques générées par l'application">
+            <img class="img-projet" style="width: 40%;" src="assets/images/projets/projet3/demo.png" alt="Démo HTML du module JavaScript">
         </div>
     </section>
+    <section class="color-box">
+        <h2>Intégrations dans ce portfolio</h2>
+        <p>
+            Le module est utilisé à trois endroits dans ce portfolio : en arrière-plan animé 
+            sur la page d'accueil, en démonstration interactive sur cette page, et en aperçu 
+            animé sur la carte de la page projets.
+        </p>
+    </section>
 </div>
+
 <div class="grid-container">
     <section class="color-box last">
         <h2>Technologies et langages utilisés</h2>
         <div class="logos">
             <div><img src="assets/images/langages/python.jpg" alt="Python" title="Python"></div>
+            <div><img class="fullwidth"src="assets/images/langages/javascript.png" alt="JavaScript" title="JavaScript"></div>
         </div>
     </section>
 </div>
