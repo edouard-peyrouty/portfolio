@@ -35,16 +35,31 @@
             stable de l'application.
         </p>
     </section>
+    <section class="color-box">
+        <h2>Historique des exécutions sur GitHub Actions</h2>
+        <p>
+            Chaque commit sur la branche principale déclenche automatiquement 
+            la pipeline définie par un fichier yml. L'onglet Actions de GitHub affiche l'historique complet des 
+            exécutions avec leur statut, leur durée et le commit associé, permettant 
+            de suivre en temps réel le bon déroulement de chaque déploiement.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/projet2/github-actions.png" alt="Historique des exécutions GitHub Actions"></div>
+    </section>
+    <section class="color-box">
+        <h2>Hébergement d'images du Docker Hub</h2>
+        <p>
+            À chaque exécution réussie de la pipeline, les images Docker buildées sont 
+            automatiquement publiées sur Docker Hub. Le registre centralise les images 
+            des différents services de l'application, chacune versionnée avec le tag <code>latest</code> 
+            pointant toujours vers le build le plus récent.
+        </p>
+        <div><img class="img-projet" src="assets/images/projets/projet2/dockerhub.png" alt="Registre Docker Hub avec les images publiées"></div>
+    </section>
 </div>
 <div class="grid-container">
     <section class="color-box last">
         <h2>Technologies et langages utilisés</h2>
         <div class="logos">
-            <div><img src="assets/images/langages/python.jpg" alt="Python" title="Python"></div>
-            <div><img src="assets/images/langages/sql.png" alt="SQL" title="SQL"></div>
-            <div><img src="assets/images/langages/html.png" alt="HTML" title="HTML"></div>
-            <div><img src="assets/images/outils/mysql.png" alt="mySQL" title="mySQL"></div>
-            <div><img src="assets/images/frameworks/flask.png" alt="flask" title="flask"></div>
             <div><img src="assets/images/outils/github.png" alt="GitHub" title="GitHub"></div>
             <div><img class="fullwidth" src="assets/images/outils/github_actions.jpg" alt="GitHub Actions" title="GitHub Actions"></div>
             <div><img class="fullwidth" src="assets/images/outils/docker.png" alt="Docker" title="Docker"></div>
