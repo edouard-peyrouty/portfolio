@@ -345,14 +345,20 @@ p {
     opacity: 0;
 }
 
-img.etablissement {
-    height: 80px;
-    width: 158px;
-    border-radius: 10px;
-}
-
 img.logo {
     width: 50px;
     height: 50px;
+}
+
+img.etablissement {
+    height: 80px;
+    width: auto;
+    background: white;
+    padding: 6px 10px;
     border-radius: 10px;
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.2) inset,  /* reflet haut intérieur */
+        0 -2px 0 rgba(0, 0, 0, 0.05) inset,       /* ombre bas intérieur */
+        0 8px 20px rgba(0, 0, 0, 0.15),            /* ombre portée */
+        0 2px 4px rgba(0, 0, 0, 0.1);              /* ombre proche */
 }

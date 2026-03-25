@@ -80,7 +80,6 @@ document.querySelectorAll('.color-box[data-src]').forEach(card => {
         if (card.classList.contains('active')) return;
 
         const containerDetails = document.getElementById('container-projet-details');
-        const divProjet = document.getElementById('projet-details');
         const project_path = card.dataset.src;
         
         // Gestion CSS de la carte sélectinonnée
@@ -98,11 +97,11 @@ document.querySelectorAll('.color-box[data-src]').forEach(card => {
                 });
             }, 700); // même durée que ta transition CSS
         } else {
-            divProjet.style.opacity = '0';
+            containerDetails.style.transform = 'translateX(calc(100% + 60px))';
             setTimeout(() => {
                 injectElement("projet-details", project_path);
-                divProjet.style.opacity = '1';
-            }, 500);
+                containerDetails.style.transform = 'translateX(0)';
+            }, 700);
         }
     });
 });
