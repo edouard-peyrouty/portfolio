@@ -59,18 +59,18 @@ nav, footer {
     padding: 10px;
     margin: 10px;
     transition: all 0.5s ease;
-
-    box-shadow:
-        0 2px 0 rgba(255, 255, 255, 0.2) inset,  /* reflet haut intérieur */
-        0 -2px 0 rgba(0, 0, 0, 0.05) inset,       /* ombre bas intérieur */
-        0 8px 20px rgba(0, 0, 0, 0.15),            /* ombre portée */
-        0 2px 4px rgba(0, 0, 0, 0.1);              /* ombre proche */
 }
 
 nav, footer, table {
     width: fit-content;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
+
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.2) inset,  /* reflet haut intérieur */
+        0 -2px 0 rgba(0, 0, 0, 0.05) inset,       /* ombre bas intérieur */
+        0 8px 20px rgba(0, 0, 0, 0.15),            /* ombre portée */
+        0 2px 4px rgba(0, 0, 0, 0.1);              /* ombre proche */
 }
 
 .nav-btn, table a {  

@@ -6,6 +6,7 @@
     <title>Portfolio - Edouard Peyrouty</title>
     <link rel="stylesheet" href="assets/style/style.css">
     <script src="assets/js/layout.js" defer></script>
+    <script type="module" src="assets/js/animated_background.js" defer></script>
     <script>
         (function () {
             const isGithubPages = location.hostname.endsWith("github.io");
@@ -16,35 +17,41 @@
     </script>
 </head>
 <body>
+
+    <!-- Gestion de l'animation du background -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- Navigation bar -->
     <nav id="header"></nav>
 
     <main>
-        <h1 class="centrage">Contactez-moi</h1>
-        <table>
-            <tbody>
-                <tr>
-                    <td><img src="assets/images/tel.png" alt="Téléphone" width="20" height="20"></td>
-                    <td>06 58 95 61 75</td>
-                    <td><a onclick="boutonCopier('0658956175', this)">Copier</a></td>
-                </tr>
-                <tr>
-                    <td><img src="assets/images/mail.png" alt="Mail" width="20" height="20"></td>
-                    <td>edouard.peyrouty@gmail.com</td>
-                    <td><a onclick="boutonCopier('edouard.peyrouty@gmail.com', this)">Copier</a></td>
-                </tr>
-                <tr>
-                    <td><img src="assets/images/linkedin.png" alt="LinkedIn" width="20" height="20"></td>
-                    <td>linkedin.com/in/edouard-peyrouty</td>
-                    <td><a href="https://www.linkedin.com/in/edouard-peyrouty" target="_blank">Mon LinkedIn</a></td>
-                </tr>
-                <tr>
-                    <td><img src="assets/images/outils/github.png" alt="GitHub" width="20" height="20"></td>
-                    <td>github.com/edouard-peyrouty</td>
-                    <td><a href="https://github.com/edouard-peyrouty" target="_blank">Mon GitHub</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="color-box">
+            <h1 class="centrage">Contactez-moi</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="assets/images/tel.png" alt="Téléphone" width="20" height="20"></td>
+                        <td>06 58 95 61 75</td>
+                        <td><a onclick="boutonCopier('0658956175', this)">Copier</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/images/mail.png" alt="Mail" width="20" height="20"></td>
+                        <td>edouard.peyrouty@gmail.com</td>
+                        <td><a onclick="boutonCopier('edouard.peyrouty@gmail.com', this)">Copier</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/images/linkedin.png" alt="LinkedIn" width="20" height="20"></td>
+                        <td>linkedin.com/in/edouard-peyrouty</td>
+                        <td><a href="https://www.linkedin.com/in/edouard-peyrouty" target="_blank">Mon LinkedIn</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/images/outils/github.png" alt="GitHub" width="20" height="20"></td>
+                        <td>github.com/edouard-peyrouty</td>
+                        <td><a href="https://github.com/edouard-peyrouty" target="_blank">Mon GitHub</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
 </html>
