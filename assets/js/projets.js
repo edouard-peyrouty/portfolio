@@ -86,7 +86,7 @@ document.querySelectorAll('.color-box[data-src]').forEach(card => {
         document.querySelectorAll('.color-box').forEach(c => c.classList.remove('active'));
         card.classList.add('active');
 
-        // Si le panneaux des cartes de projets n'est pas déjà réduit, on le réduit
+        // Si le panneau des cartes de projets n'est pas déjà réduit, on le réduit
         if (document.querySelector('.grid-container-projects').style.maxWidth !== '400px') {  
             injectElement("projet-details", project_path);     
             SetWidthContainerProjects("400px");
